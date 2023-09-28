@@ -1,8 +1,14 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+test("renders heading", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const count = screen.getByRole("heading");
+  expect(count).toBeInTheDocument();
+});
+
+test("renders subtract button", () => {
+  render(<App />);
+  const subtractButton = screen.getByText("-1");
+  expect(subtractButton).toBeInTheDocument();
 });
